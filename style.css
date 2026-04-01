@@ -1,0 +1,54 @@
+body {
+  margin: 0;
+  font-family: 'Georgia', serif;
+  background: #fafafa;
+  color: #333;
+}
+
+.hero {
+  height: 60vh;
+  background: url('images/hero.jpg') center/cover;
+  position: relative;
+}
+
+.overlay {
+  background: rgba(0,0,0,0.5);
+  color: white;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  max-width: 800px;
+  margin: auto;
+  padding: 40px 20px;
+}
+
+.timeline-item {
+  border-left: 2px solid #ccc;
+  padding-left: 15px;
+  margin-bottom: 10px;
+}
+
+.card {
+  background: white;
+  padding: 20px;
+  margin-top: 15px;
+  border-radius: 10px;
+}
+
+.gallery img {
+  width: 100%;
+  margin-top: 10px;
+  border-radius: 10px;
+}
+
+button {
+  background: #222;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+}
