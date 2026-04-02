@@ -114,6 +114,23 @@
     .gallery-grid img { width: 100%; aspect-ratio: 1; object-fit: cover; border: 1px solid var(--divider); display: block; transition: opacity 0.2s; }
     .gallery-grid img:hover { opacity: 0.85; }
 
+    /* VIDEO */
+    .video-bg { background: var(--warm-dark); }
+    .video-inner { max-width: 780px; margin: 0 auto; padding: 5rem 2rem; }
+    .video-inner h2 { color: var(--parchment); }
+    .video-inner h2 em { color: var(--gold-light); }
+    .video-inner p { color: var(--stone-light); }
+    .video-inner .section-label { color: var(--gold); }
+    .video-wrapper { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; margin-top: 2.5rem; border: 1px solid rgba(184,145,74,0.2); }
+    .video-wrapper iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; }
+
+    /* DROPBOX GALLERY */
+    .dropbox-frame { margin-top: 2rem; border: 1px solid var(--divider); overflow: hidden; background: var(--parchment); }
+    .dropbox-frame iframe { width: 100%; height: 520px; border: none; display: block; }
+    .dropbox-open-btn { display: inline-flex; align-items: center; gap: 0.6rem; margin-top: 1.25rem; background: var(--warm-dark); color: var(--parchment); text-decoration: none; padding: 0.85rem 2rem; font-family: 'Jost', sans-serif; font-size: 0.7rem; letter-spacing: 0.2em; text-transform: uppercase; transition: background 0.2s; }
+    .dropbox-open-btn:hover { background: var(--gold-muted); }
+    .dropbox-note { font-size: 0.74rem; color: var(--stone-light); margin-top: 0.75rem; font-style: italic; }
+
     /* FOOTER */
     footer { background: var(--warm-dark); color: var(--stone-light); text-align: center; padding: 3rem 2rem; }
     .footer-name { font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; color: var(--parchment); margin-bottom: 0.5rem; }
@@ -135,7 +152,7 @@
   <h1 class="hero-name"><em>Christo</em><br>Ponnadurai</h1>
   <div class="hero-dates">
     <!-- ✏️ UPDATE: Replace with actual years, e.g. "1950 – 2025" -->
-    1951 &nbsp;–&nbsp; 2026
+    [Birth Year] &nbsp;–&nbsp; [Year of Passing]
   </div>
   <div class="hero-line"></div>
   <p class="hero-tagline">
@@ -150,6 +167,7 @@
   <ul>
     <li><a href="#life">His Life</a></li>
     <li><a href="#eulogies">Eulogies</a></li>
+    <li><a href="#service">Funeral Service</a></li>
     <li><a href="#gallery">Gallery</a></li>
     <li><a href="#condolences">Condolences</a></li>
   </ul>
@@ -167,11 +185,11 @@
       <!--
         ✏️ TO ADD A PHOTO:
         Replace the entire .photo-frame div below with:
-        <img src="hero.JPG" alt="Christo Ponnadurai"
+        <img src="christo.jpg" alt="Christo Ponnadurai"
              style="width:100%;aspect-ratio:3/4;object-fit:cover;border:1px solid var(--divider);">
         Place your photo file in the project folder alongside index.html.
       -->
-      <!-- <div class="photo-frame">
+      <div class="photo-frame">
         <div class="corner-br"></div>
         <div class="corner-bl"></div>
         <svg class="photo-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
@@ -180,10 +198,8 @@
           <polyline points="21 15 16 10 5 21"/>
         </svg>
         <span>Add a photo of Christo here</span>
-      </div> -->
-      <!-- <p class="photo-upload-hint">Replace this placeholder with an <code>&lt;img&gt;</code> tag pointing to your photo file.</p> -->
-      <img src="hero.JPG" alt="Christo Ponnadurai"
-             style="width:100%;aspect-ratio:3/4;object-fit:cover;border:1px solid var(--divider);">
+      </div>
+      <p class="photo-upload-hint">Replace this placeholder with an <code>&lt;img&gt;</code> tag pointing to your photo file.</p>
     </div>
     <div>
       <!-- ✏️ UPDATE: Replace the paragraphs below with Christo's biography -->
@@ -264,30 +280,52 @@
   </div>
 </div>
 
+<!-- FUNERAL SERVICE VIDEO -->
+<div class="video-bg" id="service">
+  <div class="video-inner">
+    <div class="reveal">
+      <div class="section-label">The Funeral Service</div>
+      <h2>A Final <em>Farewell</em></h2>
+      <p>A recording of Christo's funeral service, for those who were unable to attend and for all who wish to remember this moment together.</p>
+    </div>
+    <div class="video-wrapper reveal">
+      <iframe
+        src="https://www.youtube.com/embed/YI3p9kK9Xy4"
+        title="Funeral Service of Christo Ponnadurai"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen>
+      </iframe>
+    </div>
+  </div>
+</div>
+
 <!-- GALLERY -->
 <section id="gallery">
   <div class="reveal">
     <div class="section-label">Photographs</div>
     <h2>Moments &amp; <em>Memories</em></h2>
-    <p>A collection of photographs celebrating Christo's life and the moments he shared with those he loved.</p>
+    <p>A collection of photographs celebrating Christo's life. This gallery updates automatically whenever new photos are added to the shared album.</p>
   </div>
 
-  <!--
-    ✏️ TO ADD PHOTOS:
-    Replace each .gallery-placeholder div with an <img> tag, e.g.:
-    <img src="photo1.jpg" alt="Christo at ...">
-    Place all image files in the project folder alongside index.html.
-  -->
-  <div class="gallery-grid reveal">
-    <div class="gallery-placeholder">Add photo</div>
-    <div class="gallery-placeholder">Add photo</div>
-    <div class="gallery-placeholder">Add photo</div>
-    <div class="gallery-placeholder">Add photo</div>
-    <div class="gallery-placeholder">Add photo</div>
-    <div class="gallery-placeholder">Add photo</div>
+  <div class="dropbox-frame reveal">
+    <iframe
+      src="https://www.dropbox.com/scl/fo/d0ppnilxjzcjpq3gdthwc/AEJ2z45qrjay2a9VdPJiSKE?rlkey=9xd5obn8tottae0n36qw79xzs&st=li4ry0f7&dl=0&embed=1"
+      title="Christo Ponnadurai Photo Gallery"
+      allowfullscreen>
+    </iframe>
   </div>
-  <p style="margin-top:1.25rem;font-size:0.78rem;font-style:italic;color:var(--stone-light);" class="reveal">
-    To add photos: place image files in the project folder and replace each placeholder with an <code>&lt;img src="yourphoto.jpg"&gt;</code> tag.
+
+  <a class="dropbox-open-btn reveal"
+     href="https://www.dropbox.com/scl/fo/d0ppnilxjzcjpq3gdthwc/AEJ2z45qrjay2a9VdPJiSKE?rlkey=9xd5obn8tottae0n36qw79xzs&st=li4ry0f7&dl=0"
+     target="_blank" rel="noopener">
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <path d="M12 5l-7 4.5 7 4.5 7-4.5z"/><path d="M5 13.5L12 18l7-4.5"/><path d="M5 9l7 4.5L19 9"/>
+    </svg>
+    Open Full Gallery in Dropbox
+  </a>
+  <p class="dropbox-note reveal">
+    Photos added to the shared Dropbox folder appear here automatically — no updates to the website needed.
+    To add photos, upload them directly to the <a href="https://www.dropbox.com/scl/fo/d0ppnilxjzcjpq3gdthwc/AEJ2z45qrjay2a9VdPJiSKE?rlkey=9xd5obn8tottae0n36qw79xzs&st=li4ry0f7&dl=0" target="_blank" rel="noopener" style="color:var(--gold);">shared Dropbox folder</a>.
   </p>
 </section>
 
