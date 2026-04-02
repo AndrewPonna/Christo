@@ -43,6 +43,12 @@
     nav a { display: block; padding: 1.1rem 1.4rem; font-size: 0.7rem; letter-spacing: 0.18em; text-transform: uppercase; text-decoration: none; color: var(--stone); font-weight: 400; transition: color 0.2s; }
     nav a:hover { color: var(--gold); }
 
+    /* SECTION BACKGROUNDS — alternating cream / parchment */
+    .section-cream    { background: var(--cream); }
+    .section-parchment{ background: var(--parchment); }
+    /* inner wrapper mirrors the old `section` centering */
+    .section-inner    { max-width: 780px; margin: 0 auto; padding: 5rem 2rem; }
+
     /* SECTIONS */
     section { max-width: 780px; margin: 0 auto; padding: 5rem 2rem; }
     .section-label { font-size: 0.67rem; letter-spacing: 0.28em; text-transform: uppercase; color: var(--gold); font-weight: 500; margin-bottom: 1rem; }
@@ -85,13 +91,13 @@
 
     /* CONDOLENCES */
     .condolences-grid { display: grid; gap: 1.5rem; margin-top: 2.5rem; margin-bottom: 3rem; }
-    .condolence-card { background: var(--parchment); border-left: 2px solid var(--gold); padding: 1.5rem 1.8rem; animation: fadeUp 0.4s ease both; }
+    .condolence-card { background: var(--cream); border-left: 2px solid var(--gold); padding: 1.5rem 1.8rem; animation: fadeUp 0.4s ease both; }
     .condolence-message { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 1.1rem; color: var(--warm-dark); line-height: 1.7; margin-bottom: 0.75rem; }
     .condolence-meta { font-size: 0.7rem; letter-spacing: 0.12em; color: var(--stone-light); text-transform: uppercase; }
     .no-condolences { text-align: center; padding: 3rem; color: var(--stone-light); font-style: italic; font-family: 'Cormorant Garamond', serif; font-size: 1.1rem; }
 
     /* FORM */
-    .form-block { background: var(--parchment); border: 1px solid var(--divider); padding: 2.5rem; }
+    .form-block { background: var(--cream); border: 1px solid var(--divider); padding: 2.5rem; }
     .form-title { font-family: 'Cormorant Garamond', serif; font-size: 1.6rem; color: var(--warm-dark); margin-bottom: 1.5rem; }
     .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
     @media (max-width: 500px) { .form-row { grid-template-columns: 1fr; } }
@@ -177,15 +183,16 @@
 <!-- STICKY NAV -->
 <nav>
   <ul>
-    <li><a href="#life">His Life</a></li>
+    <li><a href="#life">About Christo</a></li>
     <li><a href="#eulogies">Eulogies</a></li>
     <li><a href="#service">Funeral Service</a></li>
     <li><a href="#condolences">Condolences</a></li>
-    <li><a href="#gallery">Gallery</a></li>
+    <li><a href="#gallery">Photographs</a></li>
   </ul>
 </nav>
 
 <!-- HIS LIFE -->
+<div class="section-cream">
 <section id="life">
   <div class="reveal">
     <div class="section-label">A Life Well Lived</div>
@@ -255,13 +262,14 @@
     </div>
   </div>
 </section>
+</div><!-- /section-cream -->
 
 <!-- EULOGIES -->
 <div class="eulogies-bg" id="eulogies">
   <div class="eulogies-inner">
     <div class="reveal">
       <div class="section-label">Words Spoken at His Farewell</div>
-      <h2>Eulogies and Tributes</h2>
+      <h2>Eulogies</h2>
       <p>These words were spoken with love at Christo's funeral service, preserving for all time what he meant to those who knew him best.</p>
     </div>
 
@@ -312,6 +320,7 @@
 </div>
 
 <!-- CONDOLENCES -->
+<div class="section-parchment">
 <section id="condolences">
   <div class="reveal">
     <div class="section-label">Share a Memory</div>
@@ -347,10 +356,12 @@
     <p class="form-note">Your message will appear after a brief review. The family appreciates every word.</p>
   </div>
 </section>
+</div><!-- /section-parchment -->
 
 <!-- GALLERY -->
+<div class="section-cream">
 <section id="gallery">
-  <div class="eulogies-bg" id="eulogies">
+  <div class="reveal">
     <div class="section-label">Photographs</div>
     <h2>Moments &amp; <em>Memories</em></h2>
     <p>A collection of photographs celebrating Christo's life. This gallery updates automatically whenever new photos are added to the album.</p>
@@ -364,22 +375,23 @@
     <span>Loading photos…</span>
   </div>
 
-  <!-- <div id="flickr-error" class="gallery-error" style="display:none;">
+  <div id="flickr-error" class="gallery-error" style="display:none;">
     <p>Photos could not be loaded right now. <a href="https://github.com/AndrewPonna/Christo/tree/main/photos" target="_blank" rel="noopener" style="color:var(--gold);">View photos on GitHub →</a></p>
-  </div> -->
+  </div>
 
   <div class="gallery-footer reveal">
     <a class="gallery-flickr-btn"
        href="https://github.com/AndrewPonna/Christo/tree/main/photos"
        target="_blank" rel="noopener">
-      <!-- <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
         <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0020 4.77 5.07 5.07 0 0019.91 1S18.73.65 16 2.48a13.38 13.38 0 00-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 005 4.77a5.44 5.44 0 00-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 009 18.13V22"/>
-      </svg> -->
+      </svg>
       View All Photos on GitHub
     </a>
     <p class="gallery-note">To add photos: go to your GitHub repo → <code>photos</code> folder → <strong>Add file → Upload files</strong>. They appear here automatically.</p>
   </div>
 </section>
+</div><!-- /section-cream -->
 
 <!-- FOOTER -->
 <footer>
