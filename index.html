@@ -274,10 +274,10 @@
       <p>These words were spoken with love at Christo's funeral service, preserving for all time what he meant to those who knew him best.</p>
     </div>
 
-    <div class="eulogy-cards reveal">
+    <div class="eulogy-cards">
 
       <!-- ✏️ EULOGY 1 — Paste the first eulogy text below -->
-      <div class="eulogy-card">
+      <div class="eulogy-card reveal">
         <div class="eulogy-text">
           Good Morning, my name is Andrew and I was Chris’ second son.<br>
 Many of you know, my father went by many names — Christo, Ponna, Uncle Ponns, Thambi Mama, Dad, and more recently, Appappa. Each name carried a different relationship, a different story, and a different version of the man we all loved.
@@ -306,7 +306,7 @@ And I will miss you greatly.
       </div>
 
       <!-- ✏️ EULOGY 2 — Paste a second eulogy below, or delete this card -->
-      <div class="eulogy-card">
+      <div class="eulogy-card reveal">
         <div class="eulogy-text">
           Good afternoon, My name is Jennifer and I’d like to share my experiences and memories of my Uncle Christo as one of his 7 nieces and nephews. Over the years, I have come to know my uncle better - as best as one can living in the US while he was here in Australia. Most recently, I was able to spend a good amount of time with him in Sri Lanka when a few of the siblings traveled to celebrate my mother’s birthday. On that trip, observing my uncle with now adult eyes, I realized a few things.<br>
 First my uncle took his family very seriously and treated them as a thing to protect, provide for and honor. My mother often tells the story of how when she was teenage girl having to walk to school, she was required to take her Thambi, my uncle Christo, who would have been single digits at the time, possibly 6 yrs old. She needed to have a male family member accompany her on the street and she always thought it was funny and silly that a boy so small was sent to protect her on her walk. Having grown to know my uncle over the years I now believe he probably took that role and responsibility seriously, even then. <br>The way my uncle interacted with his family and siblings, it could be easy to mistake him as the eldest brother (and this is not just because he was inexplicably taller than all of his siblings). He checked on all his siblings and never expected others to do the same to him, even though he was the youngest. Uncle Christo fiercely protected and cared for his younger sister, my Aunty Selvi no matter what she or her family needed - while in Sri Lanka and also while living in Australia. If an older brother’s main role is to look after his younger sister, Uncle Christo would win the Oscar for his work. My Aunty Selvi stated he was “God’s gift to our family” and I think this is true. <br>
@@ -318,7 +318,7 @@ The final thing I’ll share that I’ve learned is that my Uncle’s belief in 
       </div>
 
       <!-- ✏️ EULOGY 3 — Paste a second eulogy below, or delete this card -->
-      <div class="eulogy-card">
+      <div class="eulogy-card reveal">
         <div class="eulogy-text">
           My Appapa was one of my favorite people ever. In fact, recently I have found that he probably was and still is. <br>
 One thing that I always realized was that every time he prayed he would always make God feel present in the room which gave me some sort of strength, that God would be with me no matter what happens. After then, especially after he passed away, I always tried to pray like him because I thought I just wanted to be like him. But after these few days I realized that I actually not only wanted to be like him but I also wanted to have a close relationship with God just like how he did and have that strength again. Right now if I could tell him something I would just want to tell him how much I miss him and how every time I would go back to New York after seeing him I always felt like I learned something that would help me later in life. And for all these reasons it really made me look up to him and think of him as my favorite person.
@@ -327,7 +327,7 @@ One thing that I always realized was that every time he prayed he would always m
       </div>
 
       <!-- ✏️ EULOGY 4 — Paste a second eulogy below, or delete this card -->
-      <div class="eulogy-card">
+      <div class="eulogy-card reveal">
         <div class="eulogy-text">
           Hello everyone - my name’s Eshan Ponnadurai, I’m Christopher Ponnadurai’s oldest son.<br>
 
@@ -544,7 +544,7 @@ God Bless you all.
   // ── Scroll reveal ──────────────────────────────────────
   const observer = new IntersectionObserver(
     entries => entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); }),
-    { threshold: 0.08 }
+    { threshold: 0 }
   );
   document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
