@@ -103,7 +103,7 @@
     @media (max-width: 500px) { .form-row { grid-template-columns: 1fr; } }
     .form-group { margin-bottom: 1.25rem; }
     label { display: block; font-size: 0.68rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--stone); margin-bottom: 0.5rem; }
-    input, textarea { width: 100%; background: var(--cream); border: 1px solid rgba(107,94,82,0.25); padding: 0.8rem 1rem; font-family: 'Cormorant Garamond', serif; font-size: 1rem; color: var(--warm-dark); outline: none; transition: border-color 0.2s; border-radius: 0; -webkit-appearance: none; }
+    input, textarea { width: 100%; background: var(--cream); border: 1px solid rgba(107,94,82,0.25); padding: 0.8rem 1rem; font-family: 'Cormorant Garamond', serif; font-size: 1rem; color: var(--warm-dark); outline: none; transition: border-color 0.2s; border-radius: 0; appearance: none; -webkit-appearance: none; -moz-appearance: none; }
     input:focus, textarea:focus { border-color: var(--gold); }
     textarea { min-height: 120px; resize: vertical; }
     .btn { display: inline-flex; align-items: center; gap: 0.6rem; background: var(--warm-dark); color: var(--parchment); border: none; padding: 0.85rem 2rem; font-family: 'Jost', sans-serif; font-size: 0.7rem; letter-spacing: 0.2em; text-transform: uppercase; cursor: pointer; transition: background 0.2s; }
@@ -224,15 +224,15 @@
     <div>
       <!-- ✏️ UPDATE: Replace the paragraphs below with Christo's biography -->
       <p>
-        Christo Ponnadurai was a man of extraordinary warmth, deep faith, and an enduring love for his family. Born in [birthplace], he carried with him the richness of his Sri Lankan heritage throughout a life marked by resilience, generosity, and devotion.
+        Christo Ponnadurai was a man of extraordinary warmth, deep faith, and an enduring love for his family. Born in Colombo, he carried with him the richness of his Sri Lankan heritage throughout a life marked by resilience, generosity, and devotion.
       </p>
       <p>
-        He made Melbourne his beloved home, where he built a life rooted in community and unconditional love for those around him. Whether at church, at home, or among friends, Christo had a presence that made everyone feel seen and cared for.
+        He made Melbourne and Jaffna his beloved homes, where he built a life rooted in community and unconditional love for those around him. Whether at church, at home, or among friends, Christo had a presence that made everyone feel seen and cared for.
       </p>
-      <p>
+      <!-- <p>
         <!-- ✏️ ADD: career, hobbies, community involvement, faith, key moments -->
         [Continue Christo's story here — his work, passions, community involvement, and the moments that defined him.]
-      </p>
+      </p> --> 
     </div>
   </div>
 
@@ -333,7 +333,7 @@
     <div class="no-condolences">Be the first to share a memory of Christo…</div>
   </div>
 
-  <div class="form-block reveal">
+  <form id="condolence-form" class="form-block reveal" onsubmit="submitCondolence(); return false;">
     <div class="form-title">Leave a Message</div>
     <div class="form-row">
       <div class="form-group">
@@ -349,13 +349,13 @@
       <label for="c-message">Your Message *</label>
       <textarea id="c-message" placeholder="Share a memory, a prayer, or a few words for the family…"></textarea>
     </div>
-    <button class="btn" id="submit-btn" onclick="submitCondolence()">
+    <button type="submit" class="btn" id="submit-btn">
       <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 013 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
       Leave Message
     </button>
     <div id="form-status"></div>
     <p class="form-note">Your message will appear after a brief review. The family appreciates every word.</p>
-  </div>
+  </form>
 </section>
 </div><!-- /section-parchment -->
 
@@ -449,8 +449,9 @@
       loading.style.display = 'none';
 
       if (!images.length) {
-        errBox.style.display = 'block';
-        errBox.innerHTML = '<p style="color:var(--stone-light);font-style:italic;">No photos added yet — check back soon.</p>';
+        loading.style.display = 'none';
+        errBox.style.display = 'none';
+        grid.innerHTML = '<div class="gallery-loading">No photos added yet — check back soon.</div>';
         return;
       }
 
@@ -469,6 +470,7 @@
     } catch(err) {
       loading.style.display = 'none';
       errBox.style.display  = 'block';
+      grid.innerHTML = '<div class="gallery-error">Photos could not be loaded right now. <a href="https://github.com/AndrewPonna/Christo/tree/main/photos" target="_blank" rel="noopener" style="color:var(--gold);">View photos on GitHub →</a></div>';
     }
   }
 
