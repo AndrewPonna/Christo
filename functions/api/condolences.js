@@ -32,7 +32,7 @@ function genId() {
   return Date.now().toString(36) + Math.random().toString(36).slice(2, 7);
 }
 
-function clean(str, max = 2000) {
+function clean(str, max = 10000) {
   if (typeof str !== 'string') return '';
   return str.trim().slice(0, max);
 }
@@ -79,7 +79,7 @@ export async function onRequest(context) {
 
     const name     = clean(body.name, 100);
     const relation = clean(body.relation, 100);
-    const message  = clean(body.message, 2000);
+    const message  = clean(body.message, 10000);
 
     if (!name || !message) return json({ error: 'Name and message are required.' }, 400);
 
